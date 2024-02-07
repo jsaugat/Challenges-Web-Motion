@@ -1,23 +1,36 @@
-import styles from "./style.module.scss";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import styles from './button.module.scss';
 
-const Button = ({ isActive, setIsActive }) => {
+export default function index({isActive, toggleMenu}) {
   return (
-    <div onClick={() => setIsActive(!isActive)} className={styles.button}>
-      {/* slider - contains two .el divs */}
-      <motion.div
-        className="slider"
-        animate={{ top: isActive ? "-100%" : "0" }}
-      >
-        <div className={styles.el}>
-          <p>Menu</p>
-        </div>
-        <div className={styles.el}>
-          <p>Close</p>
-        </div>
-      </motion.div>
+    <div className={styles.button}>
+        <motion.div 
+            className={styles.slider}
+            animate={{top: isActive ? "-100%" : "0%"}}
+            transition={{ duration: 0.4, type: "tween", ease: [0.76, 0, 0.24, 1]}}
+        >
+            <div 
+                className={styles.el}
+                onClick={() => {toggleMenu()}}
+            > <p>menu</p>
+                {/* <PerspectiveText label="Menu"/> */}
+            </div>
+            <div 
+                className={styles.el}
+                onClick={() => {toggleMenu()}}
+            > <p>close</p>
+                {/* <PerspectiveText label="Close" /> */}
+            </div>
+        </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default Button;
+// function PerspectiveText({label}) {
+//     return (    
+//         <div className={styles.perspectiveText}>
+//             <p>{label}</p>
+//             <p>{label}</p>
+//         </div>
+//     )
+// }

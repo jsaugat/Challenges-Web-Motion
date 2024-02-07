@@ -1,15 +1,19 @@
-"use client"
-import { useState } from 'react';
-import Button from './Button';
-import styles from "./style.module.scss"
+"use client";
 
-const Header = () => {
-  const [isActive, setIsActive] = useState(false)
+import { useState } from "react";
+import Button from "./Button";
+import styles from "./header.module.scss";
+
+const index = () => {
+  const [isActive, setIsActive] = useState(false);
   return (
     <div className={styles.header}>
-        <Button isActive={isActive} setIsActive={setIsActive}/>
+      <Button
+        isActive={isActive}
+        toggleMenu={() => {setIsActive(!isActive)}}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default index;
