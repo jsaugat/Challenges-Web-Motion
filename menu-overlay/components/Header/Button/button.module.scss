@@ -32,43 +32,44 @@
                     color: #fff;
                 }
             }
-            // &:hover{
-            //     .perspectiveText{
-            //         transform: rotateX(90deg);
-            //         p{
-            //             &:nth-of-type(1){
-            //                 transform: translateY(-100%);
-            //                 opacity: 0;
-            //             }
-            //             &:nth-of-type(2){
-            //                 opacity: 1;
-            //             }
-            //         }
-            //     }
-            // }
+            &:hover{
+                .perspectiveText{
+                    transform: rotateX(90deg);
+                    p{
+                        &:nth-of-type(1){
+                            transform: translateY(-100%);
+                            opacity: 0;
+                        }
+                        &:nth-of-type(2){
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
         }
     }
     
 }
 
-// .perspectiveText{
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     height: 100%;
-//     width: 100%;
-//     transform-style: preserve-3d;
-//     transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1);
-//     p{
-//         transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1);
-//         pointer-events: none;
-//         text-transform: uppercase;
-//         &:nth-of-type(2){
-//             position: absolute;
-//             transform-origin: bottom center;
-//             transform: rotateX(-90deg) translateY(9px);
-//             opacity: 0;
-//         }
-//     }
-// }
+.perspectiveText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 0;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    p{
+        transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        pointer-events: none;
+        text-transform: uppercase;
+        &:nth-of-type(2){
+            position: absolute;
+            transform-origin: bottom center;
+            transform: rotateX(-90deg) translateY(9px); // make it invisible
+            opacity: 0;
+        }
+    }
+}
